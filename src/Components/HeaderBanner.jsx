@@ -2,7 +2,6 @@
 import { useEffect, useState } from 'react';
 import Carousel from 'react-bootstrap/Carousel';
 import { useRouter } from 'next/navigation';
-// import ExampleCarouselImage from 'components/ExampleCarouselImage';
 
 function ControlledCarousel() {
 
