@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation';
 const ControlledCarousel = () => {
 
   const [trend, settrend] = useState([]);
-  const router = useRouter()
+  const router = useRouter();
     
   useEffect(() => {
         fetch('https://movies-api14.p.rapidapi.com/home', {
@@ -24,13 +24,12 @@ const ControlledCarousel = () => {
     }, [])
 
   const [index, setIndex] = useState(0);
-
   const handleSelect = (selectedIndex) => {
     setIndex(selectedIndex);
   };
 
   const bannerdetail = (id) => {
-      router.push(`MovieDetail/${id}`)
+      router.push(`/MovieDetail/${id}`)
   }
 
   return (
@@ -40,29 +39,6 @@ const ControlledCarousel = () => {
         <img className=' w-full object-contain h-max ' src={d.poster_path} alt='movieshows'  />
       </Carousel.Item>
       ))}
-      {/* <Carousel.Item>
-        <ExampleCarouselImage text="First slide" />
-        <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item> */}
-      {/* <Carousel.Item>
-        <ExampleCarouselImage text="Second slide" />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
-          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-        </Carousel.Caption>
-      </Carousel.Item> */}
-      {/* <Carousel.Item>
-        <ExampleCarouselImage text="Third slide" />
-        <Carousel.Caption>
-          <h3>Third slide label</h3>
-          <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-          </p>
-        </Carousel.Caption>
-      </Carousel.Item> */}
     </Carousel>
   );
 }

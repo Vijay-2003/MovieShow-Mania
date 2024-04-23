@@ -7,14 +7,14 @@ import BestAnimated from '../Components/BestAnimated'
 import SciFi from '../Components/SCIFI'
 import FamilyTime from '../Components/Familytime'
 import Adrenaline from '../Components/adrenaline'
-import HeaderBanner from '../Components/HeaderBanner'
+import ControlledCarousel from '../Components/HeaderBanner'
 import WatchFree from '../Components/Watchfree'
 import Documnentries from '../Components/Documentries'
 
 export default function Home() {
   return (
     <div className=" p-2">
-      <HeaderBanner />
+      <ControlledCarousel />
       <hr className=" text-gray-400" />
       <TrendingMovies />
       <hr className=" text-gray-400" />
