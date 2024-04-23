@@ -30,7 +30,7 @@ const ControlledCarousel = () => {
   };
 
   const bannerdetail = (id) => {
-      router.push(`MovieDetail/${id}`)
+      router.push(`/MovieDetail/${id}`)
   }
 
   return (
