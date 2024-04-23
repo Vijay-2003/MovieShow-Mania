@@ -15,7 +15,7 @@ const Navbars = () => {
   return (
     <Navbar expand="lg" className="bg-body-tertiary p-2 text-white">
       <Container fluid className=' p-3 text-white'>
-        <Navbar.Brand href="#" className=' text-white'>  
+        <Navbar.Brand href="/" className=' text-white'>  
                MovieShowMania
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -26,9 +26,8 @@ const Navbars = () => {
             navbarScroll
           >
             <div className=' flex justify-center items-center gap-3'>
-              <Nav.Link href="#action1" className=' text-white'>Home</Nav.Link>
-              <Nav.Link href="#action2" className=' text-white'>Movies</Nav.Link>
-              <Nav.Link href="#action2" className=' text-white'>Shows</Nav.Link>
+              <Nav.Link href="/MoviesHome" className=' text-white'>Movies</Nav.Link>
+              <Nav.Link href="/ShowsHome" className=' text-white'>Shows</Nav.Link>
             </div>
             {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>

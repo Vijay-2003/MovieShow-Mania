@@ -12,7 +12,7 @@ const ControlledCarousel = () => {
         fetch('https://movies-api14.p.rapidapi.com/home', {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '37d3df8fedmshd9afe73c108433cp19a041jsnb83df1edc147',
+                'X-RapidAPI-Key': '8bdce9a8cemshd13478060ca5e16p1de2c8jsn3cf75b553f3c',
                 'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
               }
         })
@@ -20,6 +20,7 @@ const ControlledCarousel = () => {
             .then((data) => {
                 console.log(data);
                 settrend(data[0].movies);
+                settrend(data[5].movies);
             })
     }, [])
 
@@ -33,10 +34,10 @@ const ControlledCarousel = () => {
   }
 
   return (
-    <Carousel activeIndex={index} onSelect={handleSelect} >
+    <Carousel activeIndex={index} onSelect={handleSelect}>
       {trend.map((d) => (
         <Carousel.Item key={d._id} onClick={() => bannerdetail(d._id)}>
-        <img className=' w-full object-contain h-max ' src={d.poster_path} alt='movieshows'  />
+        <img src={d.poster_path} alt='movieshows'  />
       </Carousel.Item>
       ))}
     </Carousel>

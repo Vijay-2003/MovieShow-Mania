@@ -1,5 +1,4 @@
 "use client"
-// import { pages } from "next/dist/build/templates/app-page";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -18,18 +17,18 @@ export default function AllMoviesHome() {
     fetch(`https://movies-api14.p.rapidapi.com/movies?page=${currentPage}`, {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '37d3df8fedmshd9afe73c108433cp19a041jsnb83df1edc147',
+        'X-RapidAPI-Key': '8bdce9a8cemshd13478060ca5e16p1de2c8jsn3cf75b553f3c',
         'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
       }
     })
-    .then(response => response.json())
-    .then(data => {
-      console.log("Fetched data:", data);
-      setdata(data.movies);
-    })
-    .catch(error => {
-      console.error("Error fetching data:", error);
-    });
+      .then(response => response.json())
+      .then(data => {
+        console.log("Fetched data:", data);
+        setdata(data.movies);
+      })
+      .catch(error => {
+        console.error("Error fetching data:", error);
+      });
   };
 
   const handledetail = (id) => {
@@ -38,15 +37,24 @@ export default function AllMoviesHome() {
 
   return (
     <div className=" bg-red-600">
-     <button onClick={() => setCurrentPage(currentPage + 1)}>Next Page</button>
-      {/* Add more buttons for additional pages if needed */}
+ <div className=" flex justify-center items-center gap-4 p-4">
+ {
+        currentPage > 1
+        &&
+        <button className=" p-2 border-2 border-gray-200 rounded-xl" 
+        onClick={() => setCurrentPage(currentPage - 1)}>Previous Page</button>
+      }
+      <button className=" p-2 border-2 border-gray-200 rounded-xl" 
+      onClick={() => setCurrentPage(currentPage + 1)}>Next Page</button>
+ </div>
+
+      <div className=" flex flex-wrap gap-3 justify-center items-center">
       {indata.map(data => (
-        <div key={data._id}>
-          <p>{data.original_title}</p>
-          <Image src={data.poster_path} height={80} width={80} alt="Pic" />
-          <button onClick={() => handledetail(data._id)}>Details</button>
+        <div key={data._id} onClick={() => handledetail(data._id)} className=" cursor-pointer">
+          <Image src={data.poster_path} height={80} width={230} alt="Pic" />
         </div>
       ))}
+      </div>
     </div>
   );
 }

@@ -1,8 +1,11 @@
 import React from 'react'
+import AllMoviesHome from '../../Components/AllMoviesHome'
 
 const MoviesHome = () => {
   return (
-    <div>MoviesHome</div>
+    <div>
+      <AllMoviesHome />
+    </div>
   )
 }
 

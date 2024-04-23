@@ -10,6 +10,7 @@ import Adrenaline from '../Components/adrenaline'
 import ControlledCarousel from '../Components/HeaderBanner'
 import WatchFree from '../Components/Watchfree'
 import Documnentries from '../Components/Documentries'
+import { Suspense } from 'react'
 
 export default function Home() {
   return (
