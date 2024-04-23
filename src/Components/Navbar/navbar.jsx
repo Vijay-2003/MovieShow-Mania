@@ -14,7 +14,7 @@ import React, { useEffect, useState } from 'react'
 
 const Navbars = () => {
 
-  const [searchvalue, setsearchvalue] = useState(null);
+  const [searchvalue, setsearchvalue] = useState();
   const [searchdata, setsearchdata] = useState();
   const router = useRouter()
 
