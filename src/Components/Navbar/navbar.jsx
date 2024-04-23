@@ -6,12 +6,38 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 // import {Accordion} from 'react-bootstrap/Accordion'
-import {Icon} from '@mui/material'
+// import {Icon} from '@mui/material'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useRouter } from 'next/navigation';
 
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Navbars = () => {
+
+  const [searchvalue, setsearchvalue] = useState(null);
+  const [searchdata, setsearchdata] = useState();
+  const router = useRouter()
+
+  useEffect(() => {
+    handlesearch();
+  },[searchvalue])
+
+  const handlesearch = (e) => {
+    // e.preventDefault();
+
+    fetch(`https://movies-api14.p.rapidapi.com/search?query=${searchvalue}`, {
+      method:'GET',
+      headers: {
+        'X-RapidAPI-Key': '8bdce9a8cemshd13478060ca5e16p1de2c8jsn3cf75b553f3c',
+        'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
+      }
+    }).then(response => response.json()).then((data) => {
+      console.log(data);
+      setsearchdata(data);
+    })
+
+    router.push(`/searchdata/${searchvalue}`)
+  }
   return (
     <Navbar expand="lg" className="bg-body-tertiary p-2 text-white">
       <Container fluid className=' p-3 text-white'>
@@ -43,12 +69,14 @@ const Navbars = () => {
               Link
             </Nav.Link> */}
           </Nav>
-          <Form className="d-flex">
+          <Form className="d-flex" action={handlesearch}>
             <Form.Control
               type="search"
               placeholder="🔍 For a Movie/Show"
               className="me-2"
               aria-label="Search"
+              value={searchvalue}
+              onChange={(ev) => setsearchvalue(ev.target.value)}
             />
             <Button variant="outline-success">Search</Button>
           </Form>

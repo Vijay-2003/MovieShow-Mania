@@ -41,17 +41,18 @@ export default function AllMoviesHome() {
  {
         currentPage > 1
         &&
-        <button className=" p-2 border-2 border-gray-200 rounded-xl" 
+        <button className=" p-2 border-2 border-gray-200 rounded-xl transition-colors hover:text-white" 
         onClick={() => setCurrentPage(currentPage - 1)}>Previous Page</button>
       }
-      <button className=" p-2 border-2 border-gray-200 rounded-xl" 
+      <button className=" p-2 border-2 border-gray-200 rounded-xl transition-colors hover:text-white" 
       onClick={() => setCurrentPage(currentPage + 1)}>Next Page</button>
  </div>
 
-      <div className=" flex flex-wrap gap-3 justify-center items-center">
+      <div className=" flex flex-wrap gap-3 justify-center items-center ">
       {indata.map(data => (
-        <div key={data._id} onClick={() => handledetail(data._id)} className=" cursor-pointer">
-          <Image src={data.poster_path} height={80} width={230} alt="Pic" />
+        <div key={data._id} onClick={() => handledetail(data._id)}
+         className=" cursor-pointer transform transition-transform hover:scale-110">
+          <Image src={data.poster_path} height={50} width={240} alt="Pic" />
         </div>
       ))}
       </div>
