@@ -25,7 +25,7 @@ const NewShows = () => {
             <div>
                 <div className='flex flex-col'>
                     <div>
-                        <h1>New Shows</h1>
+                        <h1 className=' text-white p-2'>New Shows</h1>
                     </div>
                     <div className='overflow-hidden'>
                         <div className='flex flex-nowrap overflow-x-scroll'>

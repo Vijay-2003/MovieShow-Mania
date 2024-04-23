@@ -9,19 +9,31 @@ import FamilyTime from '../Components/Familytime'
 import Adrenaline from '../Components/adrenaline'
 import HeaderBanner from '../Components/HeaderBanner'
 import WatchFree from '../Components/Watchfree'
+import Documnentries from '../Components/Documentries'
 
 export default function Home() {
   return (
-    <div>
+    <div className=" p-2">
       <HeaderBanner />
+      <hr className=" text-gray-400" />
       <TrendingMovies />
+      <hr className=" text-gray-400" />
       <NewMovies />
+      <hr className=" text-gray-400" />
       <TrendingShows />
+      <hr className=" text-gray-400" />
       <NewShows />
+      <hr className=" text-gray-400" />
       <BestAnimated />
+      <hr className=" text-gray-400" />
       <SciFi />
+      <hr className=" text-gray-400" />
       <FamilyTime />
+      <hr className=" text-gray-400" />
       <Adrenaline />
+      <hr className=" text-gray-400" />
+      <Documnentries />
+      <hr className=" text-gray-400" />
       <WatchFree />
     </div>
   );

@@ -25,7 +25,7 @@ const Adrenaline = () => {
             <div>
                 <div className='flex flex-col'>
                     <div>
-                        <h1>Get A Shot Of Adrenaline</h1>
+                        <h1 className=' text-white p-2'>Get A Shot Of Adrenaline</h1>
                     </div>
                     <div className='overflow-hidden'>
                         <div className='flex flex-nowrap overflow-x-scroll'>

@@ -25,7 +25,7 @@ const Scifi = () => {
             <div>
                 <div className='flex flex-col'>
                     <div>
-                        <h1>Sci-Fi TV/Movies</h1>
+                        <h1 className=' text-white p-2'>Sci-Fi TV/Movies</h1>
                     </div>
                     <div className='overflow-hidden'>
                         <div className='flex flex-nowrap overflow-x-scroll'>

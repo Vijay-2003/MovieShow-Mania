@@ -25,7 +25,7 @@ const WatchFree = () => {
             <div>
                 <div className='flex flex-col'>
                     <div>
-                        <h1>Movies You Can Watch For Free</h1>
+                        <h1 className=' text-white p-2'>Movies You Can Watch For Free</h1>
                     </div>
                     <div className='overflow-hidden'>
                         <div className='flex flex-nowrap overflow-x-scroll'>
