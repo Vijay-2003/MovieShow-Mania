@@ -24,7 +24,7 @@ const Searchdata = ({params}) => {
     <div className=' flex flex-wrap gap-2 justify-center items-center p-5'>
 {
     searchdata.map(d => (
-        <div className=' transform transition-transform hover:scale-110 p-2'>
+        <div key={d._id} className=' transform transition-transform hover:scale-110 p-2'>
             <Image src={d.poster_path} height={50} width={240}  alt='pic' />
         </div>
     ))
