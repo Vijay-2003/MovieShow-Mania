@@ -18,7 +18,7 @@ export default function AllMoviesHome() {
     fetch(`https://movies-api14.p.rapidapi.com/movies?page=${currentPage}`, {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '770c9e5ebdmsh5132a481cc431fep18f7a3jsn5bb845ba0219',
+        'X-RapidAPI-Key': '37d3df8fedmshd9afe73c108433cp19a041jsnb83df1edc147',
         'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
       }
     })

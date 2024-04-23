@@ -9,9 +9,9 @@ const NewMovies = () => {
         fetch('https://movies-api14.p.rapidapi.com/home', {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '770c9e5ebdmsh5132a481cc431fep18f7a3jsn5bb845ba0219',
+                'X-RapidAPI-Key': '37d3df8fedmshd9afe73c108433cp19a041jsnb83df1edc147',
                 'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
-            }
+              }
         })
             .then((response) => response.json())
             .then((data) => {
@@ -30,7 +30,7 @@ const NewMovies = () => {
                     <div className='overflow-hidden'>
                         <div className='flex flex-nowrap overflow-x-scroll'>
                             {New.map((d, index) => (
-                                <div key={index} className='flex-shrink-0 w-60 mr-2'>
+                                <div key={index} className='flex-shrink-0 w-60 mr-2 cursor-pointer'>
                                     <img className='w-full h-auto' src={d.poster_path} alt='trending pics' />
                                 </div>
                             ))}
