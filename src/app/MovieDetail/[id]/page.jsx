@@ -1,4 +1,5 @@
 "use client"
+import { useRouter } from 'next/navigation';
 import React, { useEffect, useState } from 'react'
 
 
@@ -7,6 +8,7 @@ const MovieDetail = ({ params }) => {
   const [moviedata, setdata] = useState({});
   const [similarmoviedata, setsimilardata] = useState([]);
   const { id } = params
+  const router = useRouter();
 
   useEffect(() => {
     fetchMovies();
@@ -31,6 +33,10 @@ const MovieDetail = ({ params }) => {
         console.error("Error fetching data:", error);
       });
   };
+
+  const similardata = (id) => {
+    router.push(`/MovieDetail/${id}`)
+  }
 
   // console.log(moviedata.original_title)
   return (
@@ -60,9 +66,8 @@ const MovieDetail = ({ params }) => {
         {
           similarmoviedata.map(d => (
             <div key={d._id}>
-              <div>
-              <img className='' src={d.
-                  poster_path
+              <div onClick={() => similardata(d._id)}>
+              <img className='' src={d.poster_path
                 } />
               </div>
             </div>
