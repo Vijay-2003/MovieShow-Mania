@@ -25,7 +25,7 @@ const MovieDetail = ({ params }) => {
       .then(response => response.json())
       .then(data => {
         // console.log(data.movie);
-        // console.log(data);
+        console.log(data);
         setdata(data.movie);
         setsimilardata(data.similarMovies)
       })
