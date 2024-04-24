@@ -18,11 +18,11 @@ const Navbars = () => {
   const [searchdata, setsearchdata] = useState();
   const router = useRouter()
 
-  useEffect(() => {
-    handlesearch();
-  },[searchvalue])
+  // useEffect(() => {
+  //   handlesearch();
+  // },[searchvalue])
 
-  const handlesearch = (e) => {
+  const handlesearch = () => {
     // e.preventDefault();
 
     fetch(`https://movies-api14.p.rapidapi.com/search?query=${searchvalue}`, {
