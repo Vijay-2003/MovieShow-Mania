@@ -7,6 +7,7 @@ const MovieDetail = ({ params }) => {
 
   const [moviedata, setdata] = useState({});
   const [genres, setgenres] = useState([]);
+  const [source, setsource] = useState([])
   const [similarmoviedata, setsimilardata] = useState([]);
   const { id } = params
   const router = useRouter();
@@ -30,6 +31,8 @@ const MovieDetail = ({ params }) => {
         setdata(data.movie);
         setgenres(data.movie.genres)
         setsimilardata(data.similarMovies)
+        setsource(data.movie.sources)
+        console.log(data.movie.sources)
       })
       .catch(error => {
         console.error("Error fetching data:", error);
@@ -48,24 +51,35 @@ const MovieDetail = ({ params }) => {
         <img src={moviedata.backdrop_path} alt="pic" className="w-full" />
       </div>
 
-      <div className="w-full flex flex-col md:flex-row justify-center items-start p-5">
+      <div className="w-full flex flex-col md:flex-row justify-center items-start p-4">
         <div className="w-full md:w-1/4">
           <img src={moviedata.poster_path} alt="pic" className="w-full h-auto" />
         </div>
-        <div className="w-full md:w-3/4 flex flex-col">
-          <h1>{moviedata.original_title}</h1>
-          <h2>{moviedata.release_date}</h2>
-          <div className="flex flex-wrap">
+        <div className="w-full md:w-3/4 flex flex-col text-white p-4">
+          <h1 className="text-3xl font-bold mb-2">{moviedata.original_title}</h1>
+          <h2 className="text-xl font-semibold mb-2">Rating: {moviedata.vote_average}</h2>
+          <h2 className="text-gray-500 mb-4">{moviedata.release_date}</h2>
+          <div className="flex flex-wrap text-gray-400 mb-4">
+            <h4 className="mr-2">Genres:</h4>
             {genres.map((d, index) => (
               <h4 key={index} className="mr-2">{d}</h4>
             ))}
           </div>
-          <h5>{moviedata.overview}</h5>
+          <h5 className="mb-4">{moviedata.overview}</h5>
+
+          <div className='flex flex-wrap mb-4'>
+            <h3 className=" text-gray-400 mr-2">Available Sources:</h3>
+            {source.map((d, index) => (
+              <h3 key={index} className=" text-blue-600 mr-2">
+                <a href={d.link} target='window2' className='no-underline'>{d.display_name},</a>
+              </h3>
+            ))}
+          </div>
         </div>
       </div>
 
-      <div className="w-full">
-        <h2>Trailer</h2>
+      <div className="w-full p-1">
+        <h2 className="text-white p-2">Trailer</h2>
         {moviedata.youtube_trailer && (
           <iframe
             width="100%"
@@ -79,7 +93,7 @@ const MovieDetail = ({ params }) => {
       </div>
 
       <div className="w-full">
-        <h1 className="text-white p-2">Similar Movies</h1>
+        <h1 className="text-white p-4">Similar Movies</h1>
         <div className="overflow-hidden">
           <div className="flex flex-nowrap overflow-x-scroll">
             {similarmoviedata.map((d, index) => (
