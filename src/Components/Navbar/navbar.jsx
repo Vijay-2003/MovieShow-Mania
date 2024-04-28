@@ -28,7 +28,7 @@ const Navbars = () => {
     fetch(`https://movies-api14.p.rapidapi.com/search?query=${searchvalue}`, {
       method:'GET',
       headers: {
-        'X-RapidAPI-Key': '8bdce9a8cemshd13478060ca5e16p1de2c8jsn3cf75b553f3c',
+        'X-RapidAPI-Key': 'afbd374dc7mshea061cb27cf118bp114905jsn2772060f10bd',
         'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
       }
     }).then(response => response.json()).then((data) => {
