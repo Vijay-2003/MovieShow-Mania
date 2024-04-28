@@ -39,10 +39,12 @@ const Navbars = () => {
     router.push(`/searchdata/${searchvalue}`)
   }
   return (
-    <Navbar expand="lg" className="bg-body-tertiary p-2 text-white">
+    <Navbar expand="lg" className="bg-body-tertiary p-2 text-white text-[25px]">
       <Container fluid className=' p-3 text-white'>
-        <Navbar.Brand href="/" className=' text-white'>  
-               MovieShowMania
+        <Navbar.Brand href="/" className=' text-white flex justify-center items-center gap-1'>
+          <img className=' bg-black w-[45px] h-[45px] justify-center items-center'
+           src='https://i.pinimg.com/736x/ea/8d/11/ea8d11f1ffc6355b8a440106ce61d0f3.jpg' />  
+               <div className='text-[25px]'>MS-Mania</div>
           </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
@@ -55,19 +57,6 @@ const Navbars = () => {
               <Nav.Link href="/MoviesHome" className=' text-white'>Movies</Nav.Link>
               <Nav.Link href="/ShowsHome" className=' text-white'>Shows</Nav.Link>
             </div>
-            {/* <NavDropdown title="Link" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                Another action
-              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                Something else here
-              </NavDropdown.Item>
-            </NavDropdown> */}
-            {/* <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link> */}
           </Nav>
           <Form className="d-flex" action={handlesearch}>
             <Form.Control
