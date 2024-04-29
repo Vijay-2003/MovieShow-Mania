@@ -1,10 +1,10 @@
 "use client"
-import Button from 'react-bootstrap/Button';
+// import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
-import NavDropdown from 'react-bootstrap/NavDropdown';
+// import NavDropdown from 'react-bootstrap/NavDropdown';
 // import {Accordion} from 'react-bootstrap/Accordion'
 // import {Icon} from '@mui/material'
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -63,13 +63,13 @@ const Navbars = () => {
           <Form className="d-flex" action={handlesearch} >
             <Form.Control
               type="search"
-              placeholder="🔍 For a Movie/Show"
+              placeholder="🔍For a Movie/Show"
               className="me-2"
               aria-label="Search"
               value={searchvalue}
               onChange={(ev) => setsearchvalue(ev.target.value)}
             />
-            <Button variant="outline-success">Search</Button>
+            {/* <Button variant="outline-success">Search</Button> */}
           </Form>
         </Navbar.Collapse>
       </Container>

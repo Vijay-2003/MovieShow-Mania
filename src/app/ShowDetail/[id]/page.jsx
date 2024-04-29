@@ -23,6 +23,7 @@ const ShowDetail = ({ params }) => {
     .then(response => response.json())
     .then((data) => {
       setshowdetail(data.show);
+      console.log(data.show)
       setgenres(data.show.genres);
       setsource(data.show.sources);
       setseasonsdata(data.seasons);
@@ -30,8 +31,8 @@ const ShowDetail = ({ params }) => {
   };
 
   return (
-    <div className='flex flex-col items-center p-3'>
-      <div>
+    <div className='flex flex-col items-center p-2'>
+      <div className=' mb-4'>
         <img src={showdetail.backdrop_path} alt='pic' className="w-full" />
       </div>
 
@@ -56,7 +57,7 @@ const ShowDetail = ({ params }) => {
             <h3 className=" text-gray-400 mr-2">Available Sources:</h3>
             {source.map((d, index) => (
               <h3 key={index} className=" text-blue-600 mr-2">
-                <a href={d.link} target='window2' className='no-underline'>{d.display_name},</a>
+                <a href={d.info} target='window2' className='no-underline'>{d.display_name},</a>
               </h3>
             ))}
           </div>
