@@ -70,7 +70,7 @@ export default function AllMoviesHome() {
         </button>
       </div>
 
-      <div className=" flex py-2 justify-center items-center mb-2">
+      {/* <div className=" flex py-2 justify-center items-center mb-2">
         <input
         className=" p-2 border-b-2 "
           type="text"
@@ -78,7 +78,7 @@ export default function AllMoviesHome() {
           value={searchTerm}
           onChange={handleSearch}
         />
-      </div>
+      </div> */}
 
       <div className="flex flex-wrap gap-3 justify-center items-center">
         {filteredData.map(data => (
