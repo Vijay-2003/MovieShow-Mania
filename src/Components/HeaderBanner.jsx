@@ -36,8 +36,10 @@ const ControlledCarousel = () => {
   return (
     <Carousel activeIndex={index} onSelect={handleSelect}>
       {trend.map((d) => (
-        <Carousel.Item  key={d._id} onClick={() => bannerdetail(d._id)}>
-        <img  className='w-full object-cover cursor-pointer' src={d.poster_path} alt='movieshows'  />
+        
+        <Carousel.Item  key={d._id} >
+        <img  className='w-full object-cover cursor-pointer' src={d.backdrop_path} alt='movieshows' onClick={() => bannerdetail(d._id)}  />
+
       </Carousel.Item>
       ))}
     </Carousel>
