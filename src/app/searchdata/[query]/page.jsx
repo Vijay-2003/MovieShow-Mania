@@ -12,12 +12,13 @@ const Searchdata = ({params}) => {
     fetch(`https://movies-api14.p.rapidapi.com/search?query=${query}`, {
         method:'GET',
         headers: {
-          'X-RapidAPI-Key': 'afbd374dc7mshea061cb27cf118bp114905jsn2772060f10bd',
+          'X-RapidAPI-Key': '3b1a4fac7bmshd779f247bcd3562p1b66eajsn88d4cb9facc4',
           'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
         }
       }).then(response => response.json()).then((data) => {
-        console.log(data);
+        // console.log(data);
         setsearchdata(data.contents);
+        // console.log(data.contents)
       })
  },[query])
 

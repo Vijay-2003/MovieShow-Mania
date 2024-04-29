@@ -20,19 +20,19 @@ const MovieDetail = ({ params }) => {
     fetch(`https://movies-api14.p.rapidapi.com/movie/${id}`, {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': 'afbd374dc7mshea061cb27cf118bp114905jsn2772060f10bd',
+        'X-RapidAPI-Key': '3b1a4fac7bmshd779f247bcd3562p1b66eajsn88d4cb9facc4',
         'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
       }
     })
       .then(response => response.json())
       .then(data => {
         // console.log(data.movie);
-        console.log(data);
+        // console.log(data);
         setdata(data.movie);
         setgenres(data.movie.genres)
         setsimilardata(data.similarMovies)
         setsource(data.movie.sources)
-        console.log(data.movie.sources)
+        // console.log(data.movie.sources)
       })
       .catch(error => {
         console.error("Error fetching data:", error);
@@ -44,7 +44,7 @@ const MovieDetail = ({ params }) => {
   }
 
   // console.log(moviedata.original_title)
-  console.log(genres);
+  // console.log(genres);
   return (
     <div className="flex flex-col items-center p-3">
       <div>

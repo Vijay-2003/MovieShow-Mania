@@ -28,12 +28,13 @@ const Navbars = () => {
     fetch(`https://movies-api14.p.rapidapi.com/search?query=${searchvalue}`, {
       method:'GET',
       headers: {
-        'X-RapidAPI-Key': 'afbd374dc7mshea061cb27cf118bp114905jsn2772060f10bd',
+        'X-RapidAPI-Key': '3b1a4fac7bmshd779f247bcd3562p1b66eajsn88d4cb9facc4',
         'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
       }
     }).then(response => response.json()).then((data) => {
       console.log(data);
       setsearchdata(data);
+      // console.log(data.contents.contentType)
     })
 
     router.push(`/searchdata/${searchvalue}`)
@@ -58,7 +59,8 @@ const Navbars = () => {
               <Nav.Link href="/ShowsHome" className=' text-white'>Shows</Nav.Link>
             </div>
           </Nav>
-          <Form className="d-flex" action={handlesearch}>
+          {/* action={handlesearch} */}
+          <Form className="d-flex" action={handlesearch} >
             <Form.Control
               type="search"
               placeholder="🔍 For a Movie/Show"

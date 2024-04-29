@@ -1,9 +1,12 @@
 import React from 'react'
+import AllShowHome from '../../Components/AllShowsHome'
 
-const ShowsHome = () => {
+const ShowHome = () => {
   return (
-    <div>ShowsHome</div>
+    <div>
+      <AllShowHome />
+    </div>
   )
 }
 
-export default ShowsHome
+export default ShowHome

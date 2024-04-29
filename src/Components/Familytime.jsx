@@ -11,7 +11,7 @@ const Familytime = () => {
         fetch('https://movies-api14.p.rapidapi.com/home', {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'afbd374dc7mshea061cb27cf118bp114905jsn2772060f10bd',
+                'X-RapidAPI-Key': '3b1a4fac7bmshd779f247bcd3562p1b66eajsn88d4cb9facc4',
                 'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
               }
         })

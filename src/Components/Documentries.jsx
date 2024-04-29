@@ -1,7 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation';
-
 const Documentries = () => {
 
     const [trend, settrend] = useState([]);
@@ -11,7 +10,7 @@ const Documentries = () => {
         fetch('https://movies-api14.p.rapidapi.com/home', {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': 'afbd374dc7mshea061cb27cf118bp114905jsn2772060f10bd',
+                'X-RapidAPI-Key': '3b1a4fac7bmshd779f247bcd3562p1b66eajsn88d4cb9facc4',
                 'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
               }
         })
@@ -21,8 +20,8 @@ const Documentries = () => {
                 settrend(data[9].movies);
             })
     }, [])
-    const handletail = (id) => {
-        router.push(`/MovieDetail/${id}`)
+    const handleshowdetail = (id) => {
+        router.push(`/ShowDetail/${id}`);
     }
 
     return (
@@ -36,7 +35,7 @@ const Documentries = () => {
                         <div className='flex flex-nowrap overflow-x-scroll'>
                             {trend.map((d, index) => (
                                 <div key={index} className='flex-shrink-0 w-60 mr-2 cursor-pointer transform transition-transform hover:scale-110'>
-                                    <img className='w-full h-auto' src={d.poster_path} alt='trending pics'  onClick={() => handletail(d._id)}/>
+                                    <img className='w-full h-auto' src={d.poster_path} alt='trending pics' onClick={() => handleshowdetail(d._id)}/>
                                 </div>
                             ))}
                         </div>
