@@ -10,7 +10,7 @@ const Scifi = () => {
         fetch('https://movies-api14.p.rapidapi.com/home', {
             method: 'GET',
             headers: {
-                'X-RapidAPI-Key': '3b1a4fac7bmshd779f247bcd3562p1b66eajsn88d4cb9facc4',
+                'X-RapidAPI-Key': '46decb6978mshb4001282700709ap169619jsnc3a0bfd77551',
                 'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
               }
         })

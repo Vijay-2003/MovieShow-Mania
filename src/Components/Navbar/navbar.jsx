@@ -18,21 +18,16 @@ const Navbars = () => {
   const [searchdata, setsearchdata] = useState();
   const router = useRouter()
 
-  // useEffect(() => {
-  //   handlesearch();
-  // },[searchvalue])
-
   const handlesearch = () => {
-    // e.preventDefault();
 
     fetch(`https://movies-api14.p.rapidapi.com/search?query=${searchvalue}`, {
       method:'GET',
       headers: {
-        'X-RapidAPI-Key': '3b1a4fac7bmshd779f247bcd3562p1b66eajsn88d4cb9facc4',
+        'X-RapidAPI-Key': '46decb6978mshb4001282700709ap169619jsnc3a0bfd77551',
         'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
       }
     }).then(response => response.json()).then((data) => {
-      console.log(data);
+      // console.log(data);
       setsearchdata(data);
       // console.log(data.contents.contentType)
     })

@@ -1,4 +1,5 @@
 "use client"
+
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { useRouter } from "next/navigation";
@@ -27,13 +28,13 @@ export default function AllMoviesHome() {
     fetch(`https://movies-api14.p.rapidapi.com/movies?page=${currentPage}`, {
       method: 'GET',
       headers: {
-        'X-RapidAPI-Key': '3b1a4fac7bmshd779f247bcd3562p1b66eajsn88d4cb9facc4',
+        'X-RapidAPI-Key': '46decb6978mshb4001282700709ap169619jsnc3a0bfd77551',
         'X-RapidAPI-Host': 'movies-api14.p.rapidapi.com'
       }
     })
       .then(response => response.json())
       .then(data => {
-        console.log("Fetched data:", data);
+        // console.log("Fetched data:", data);
         setdata(data.movies);
         // Initialize filtered data with all movies initially
         setFilteredData(data.movies);
