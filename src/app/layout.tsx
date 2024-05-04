@@ -4,6 +4,8 @@ import "./globals.css";
 import Navbars from '../Components/Navbar/navbar'
 import { Suspense } from "react";
 import Loading from '../app/loading'
+import { Analytics } from '@vercel/analytics/react';
+
 
 const inter = Inter({ subsets: ["latin"] });
 const roboto = Roboto({
@@ -28,6 +30,7 @@ export default function RootLayout({
         <Suspense fallback={<Loading />}>
         {children}
         </Suspense>
+        <Analytics />
         </body>
     </html>
   );
